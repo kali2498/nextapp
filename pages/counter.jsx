@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
+import Head from 'next/head'
 
-const counter = () => {
+const Counter = () => {
+  const [count, setCount] = useState(0);
   return (
-    <div>counter</div>
-  )
-}
+    <div>
+    <Head><title>Counter App</title></Head>
+      <h1>Counter:{count}</h1>
+      <div>
+        <button onClick={() => setCount(count + 1)}>Add</button>
+        <button onClick={() => setCount(count - 1)}>Minus</button>
+      </div>
+    </div>
+  );
+};
 
-export default counter
+export default Counter;
